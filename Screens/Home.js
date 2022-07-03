@@ -5,13 +5,14 @@ import Footer from "../Components/Footer";
 import { isSearchBarAvailableForCurrentPlatform } from "react-native-screens";
 import DocSearchResult from '../Screens/DocSearchResult';
 import { useSelector, useDispatch } from 'react-redux';
-import { setGoToDoctorsSearchResult } from '../Redux/actions';
+import { setGoToDoctorsSearchResult, changePredictionComponent } from '../Redux/actions';
 
 function TopBanner(props) {
   const dispatch = useDispatch();
   const selector = useSelector(state => state);
 
   const GoToPrediction = () => {
+    dispatch(changePredictionComponent("Component1"));
     props.props?.navigation?.navigate("Prediction");
   }
 
@@ -115,7 +116,7 @@ function TopBanner(props) {
           }} shadow={"3"}
             style={{flexGrow: 3}}
           >
-            Box 1
+            Orthopedics
           </Center>
           <Center bg="primary.500" size="16" rounded="sm" _text={{
               color: "warmGray.50",
@@ -123,7 +124,7 @@ function TopBanner(props) {
           }} shadow={"3"}
           style={{flexGrow: 3}}
           >
-            Box 2
+            Internal Medicine
           </Center>
           <Center size="16" bg="primary.700" rounded="sm" _text={{
               color: "warmGray.50",
@@ -131,7 +132,7 @@ function TopBanner(props) {
           }} shadow={"3"}
           style={{flexGrow: 3}}
           >
-            Box 3
+            Gynecology
           </Center>
           <Center size="16" bg="primary.700" rounded="sm" _text={{
               color: "warmGray.50",
@@ -139,7 +140,7 @@ function TopBanner(props) {
           }} shadow={"3"}
           style={{flexGrow: 3}}
           >
-            Box 4
+            General Surgery
           </Center>
         </HStack>
         </VStack>
