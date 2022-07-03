@@ -13,6 +13,16 @@ export const Styles = StyleSheet.create({
     flex: { 
       display: 'flex',
       flexDirection: 'row',
-      justifyContent: 'space-between'
+      justifyContent: 'space-between',
+      padding:20
+    },
+    title: {
+        fontSize: 20
+    },
+    date: {
+        fontSize: 20
+    },
+    description:{
+        padding:20
     }
 });
